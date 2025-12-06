@@ -4,15 +4,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def root():
-    return jsonify({'status': 'ok', 'message': 'API running'}), 200
+    return jsonify({'status': 'ok', 'routes': ['/saludo','/status']}), 200
 
-@app.route('/status')
+@app.route('/status', methods=['GET'])
 def status():
-    return {
-        "status": "ok",
-        "version": "1.0",
-        "author": "Majo Ortiz"
-    }
+    return jsonify({'status': 'running', 'version': '1.0', 'author': 'Majo Ortiz'}), 200
 
 @app.route('/saludo', methods=['GET'])
 def saludo():
