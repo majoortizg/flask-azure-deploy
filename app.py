@@ -12,7 +12,7 @@ def status():
 
 @app.route('/saludo', methods=['GET'])
 def saludo():
-    return jsonify({'mensaje': 'CAMBIOOOHola Mundo, como estas, sera, quien sabe pero parece que si'}), 200
+    return jsonify({'mensaje': ' Mundo, como estas, sera, quien sabe pero parece que si'}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
