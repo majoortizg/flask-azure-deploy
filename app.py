@@ -6,6 +6,14 @@ app = Flask(__name__)
 def root():
     return jsonify({'status': 'ok', 'message': 'API running'}), 200
 
+@app.route('/status')
+def status():
+    return {
+        "status": "ok",
+        "version": "1.0",
+        "author": "Majo Ortiz"
+    }
+
 @app.route('/saludo', methods=['GET'])
 def saludo():
     return jsonify({'mensaje': 'Hola Mundo, como estas, sera, quien sabe pero parece que si'}), 200
